@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('build aplication'){
             steps{
-                bat 'test --tests runners.RunnerBuyProducts aggregate'
+                bat 'gradlew test --tests runners.RunnerBuyProducts aggregate'
             }
         }
     }
