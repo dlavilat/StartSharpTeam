@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('deploy aplication'){
+        stage('build aplication'){
             steps{
                 bat 'gradlew clean build -x test'
             }
