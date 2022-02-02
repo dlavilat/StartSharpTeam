@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-        label 'agentprueba'
-    }
+    agent any
     stages{
         stage('build aplication'){
             steps{
