@@ -8,7 +8,7 @@ pipeline{
         }
         stage('deploy aplication'){
             steps{
-                bat 'gradlew test --tests runners.RunnerBuyProducts aggregate'
+                bat 'gradlew test --tests runners.RunnerProducts aggregate'
             }
         }
     }
