@@ -1,5 +1,6 @@
 package stepsdefinitions.products;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,11 +14,20 @@ import tasks.LoginUserTask;
 import userinterface.MainMenu;
 import userinterface.orders.Orders;
 
+import java.util.List;
+
 public class CreateProductGeneralSteps {
     @Before
     public void setup(){
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
         OnStage.setTheStage(new OnlineCast());
+    }
+    @Given("^User login in the StartSharp with$")
+    public void User_login_in_the_StartSharp_with(DataTable datos){
+        List<List<String>> data = datos.asLists();
+        OnStage.theActorCalled("brandon").wasAbleTo(NavigateTo.theStartSharpLoginPage(),
+                                                                (LoginUserTask.with(data.get(1).get(0).toString(),
+                                                                                    data.get(1).get(1).toString())));
     }
 
     @Given("the users has entered the orders functionality")

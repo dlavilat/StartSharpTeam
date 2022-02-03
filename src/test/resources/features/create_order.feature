@@ -5,7 +5,9 @@
 Feature: Create order
 
   Background: the user is logged in the StartSharp Page
-    Given User login in the StartSharp with the user 'admin' and password 'serenity'
+    Given User login in the StartSharp with
+      |user| password |
+      |admin|serenity|
 
     Scenario Outline: Create order general
       Given the users has entered the orders functionality
