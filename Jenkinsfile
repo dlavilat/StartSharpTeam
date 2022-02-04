@@ -1,6 +1,6 @@
 pipeline{
   agent {
-	label 'Slave_Induccion'
+	label 'principal'
   }
     stages{
         stage('build aplication'){
