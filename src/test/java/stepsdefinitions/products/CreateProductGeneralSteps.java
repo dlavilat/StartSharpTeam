@@ -33,8 +33,8 @@ public class CreateProductGeneralSteps {
     @Given("the users has entered the orders functionality")
     public void theUsersHasEnteredTheOrdersFunctionality() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(MainMenu.MENU_NORTHWIND),
-                Click.on(MainMenu.MENU_ORDERS)
+                Click.on(MainMenu.MENU_NORTHWIND).afterWaitingUntilEnabled(),
+                Click.on(MainMenu.MENU_ORDERS).afterWaitingUntilEnabled()
         );
     }
     @Given("enter to create an order")
