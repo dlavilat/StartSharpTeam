@@ -1,5 +1,7 @@
 pipeline{
-    agent { label 'master' }
+  agent {
+	label 'Slave_Induccion'
+  }
     stages{
         stage('build aplication'){
             steps{
