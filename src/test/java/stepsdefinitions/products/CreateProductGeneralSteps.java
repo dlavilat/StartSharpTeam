@@ -5,13 +5,12 @@ import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import navigation.NavigateTo;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import tasks.menu.OpcionOrdersTask;
 import tasks.LoginUserTask;
-import userinterface.MainMenu;
 import userinterface.orders.Orders;
 
 import java.util.List;
@@ -33,8 +32,7 @@ public class CreateProductGeneralSteps {
     @Given("the users has entered the orders functionality")
     public void theUsersHasEnteredTheOrdersFunctionality() {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                Click.on(MainMenu.MENU_NORTHWIND).afterWaitingUntilEnabled(),
-                Click.on(MainMenu.MENU_ORDERS).afterWaitingUntilEnabled()
+                OpcionOrdersTask.menuOrders()
         );
     }
     @Given("enter to create an order")
